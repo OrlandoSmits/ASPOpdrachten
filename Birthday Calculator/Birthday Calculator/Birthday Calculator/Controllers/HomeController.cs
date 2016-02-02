@@ -24,15 +24,32 @@ namespace Birthday_Calculator.Controllers
 
             return View();
         }
+
+
         [HttpPost]
         public ViewResult FormPage(BirthdayModel birthdayModel)
         {
-            //Ophalen van de velden uit het form.
+            //Ophalen van de velden uit het form in een DateTime object.
+
+
+            DateTime inputBirthday = new DateTime(birthdayModel.Year, birthdayModel.Month, birthdayModel.Day);
             
+
             //Bepalen van de datum van vandaag. 
+            DateTime dateToday = DateTime.Today;
+
+            //Haal de volgende verjaardag op, kijken naar het verschil van het jaartal van vandaag en het geboortejaar. 
+            DateTime nextBirthDay = inputBirthday.AddYears(dateToday.Year - inputBirthday.Year);
+
+            //Het aantal overgebleven dagen tot aan de volgende verjaardag. 
+            int numbDays = (nextBirthDay - dateToday).Days;
+            ViewBag.numbDays = numbDays;
+
+
+            return View("Uitkomst", birthdayModel);
 
             //Bepalen van het aantal dagen tot aan de verjaardag.
-        
+
 
 
 
