@@ -4,27 +4,38 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using Birthday_Calculator.Models;
+
 namespace Birthday_Calculator.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ViewResult Index()
         {
+            String currentDate = DateTime.Now.ToString("dd MMMM yyy");
+            ViewBag.Greeting = "Het is vandaag: " + currentDate;
+            
             return View();
         }
-
-        public ActionResult About()
+        [HttpGet]
+        public ViewResult FormPage()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Bereken het aantal dagen tot mijn verjaardag";
 
             return View();
         }
-
-        public ActionResult Contact()
+        [HttpPost]
+        public ViewResult FormPage(BirthdayModel birthdayModel)
         {
-            ViewBag.Message = "Your contact page.";
+            //Ophalen van de velden uit het form.
+            
+            //Bepalen van de datum van vandaag. 
 
-            return View();
+            //Bepalen van het aantal dagen tot aan de verjaardag.
+        
+
+
+
         }
     }
 }
