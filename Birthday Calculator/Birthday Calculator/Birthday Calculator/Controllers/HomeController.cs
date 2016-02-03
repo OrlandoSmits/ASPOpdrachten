@@ -41,14 +41,25 @@ namespace Birthday_Calculator.Controllers
             //Haal de volgende verjaardag op, kijken naar het verschil van het jaartal van vandaag en het geboortejaar. 
             DateTime nextBirthDay = inputBirthday.AddYears(dateToday.Year - inputBirthday.Year);
 
+            if (nextBirthDay < dateToday)
+            {
+                nextBirthDay = nextBirthDay.AddYears(1);
+            }
+
             //Het aantal overgebleven dagen tot aan de volgende verjaardag. 
             int numbDays = (nextBirthDay - dateToday).Days;
             ViewBag.numbDays = numbDays;
+            
+            //Berekenen van de leeftijd en afronden op een heel getal
+            double age = Math.Round(((dateToday - inputBirthday).TotalDays) / 365);
+
+           
+            @ViewBag.age = (age);
 
 
             return View("Uitkomst", birthdayModel);
 
-            //Bepalen van het aantal dagen tot aan de verjaardag.
+            
 
 
 

@@ -1,0 +1,33 @@
+﻿@model Birthday_Calculator.Models.BirthdayModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Uitkomst</title>
+</head>
+<body>
+<div class="uitslag col-sm-12 col-xs-12">
+    <div class="row">
+        @if (@ViewBag.numbDays == 0)
+        {
+            @:Gefeliciteerd @Model.Name, @ViewBag.age is een hele mooie leeftijd!
+
+        }
+        else
+        {
+            @: Nog maar:  @ViewBag.numbDays dagen tot je verjaardag!
+                
+        }
+
+    </div>
+</div>
+
+<div>
+</div>
+</body>
+</html>
