@@ -1,6 +1,15 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: url("Birthday-Cupcake.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+}
+
+h2 {
+    color: lightsalmon;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +31,4 @@ select,
 textarea {
     max-width: 280px;
 }
+

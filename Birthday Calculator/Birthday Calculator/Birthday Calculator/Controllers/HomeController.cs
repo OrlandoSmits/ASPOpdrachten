@@ -20,7 +20,7 @@ namespace Birthday_Calculator.Controllers
         [HttpGet]
         public ViewResult FormPage()
         {
-            ViewBag.Message = "Bereken het aantal dagen tot mijn verjaardag";
+            ViewBag.Message = "Bereken het aantal dagen tot je verjaardag";
 
             return View();
         }

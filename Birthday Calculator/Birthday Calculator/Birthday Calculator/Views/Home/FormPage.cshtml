@@ -9,17 +9,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>FormPage</title>
+    
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-        <p>Your Name: @Html.TextBoxFor(x => x.Name)</p>
-        <p>Birthday Date:</p>
-        <p>Date: @Html.TextBoxFor(x => x.Day)</p>
-        <p>Month Name: @Html.TextBoxFor(x => x.Month)</p>
-        <p>Year Name: @Html.TextBoxFor(x => x.Year)</p>
-        <input type="submit" value="Bereken!"/>
 
-    }
+@using (Html.BeginForm())
+{
+    <label for="inputName">Your Name: </label>
+    <input type="text" class="form-control" id="inputName" placeholder="Voer hier uw Naam in"/> @Html.TextBoxFor(x => x.Name)
+    <div class="container-fluid">
+    <div class="col-sm-12 col-xs-12">Birthday Date:</div>
+    <div class="col-sm-12-col-xs-12">Date: @Html.TextBoxFor(x => x.Day)</div>
+    <div class="col-sm-12 col-xs-12">Month Name: @Html.TextBoxFor(x => x.Month)</div>
+    <div class="col-sm-12 col-xs-12">Year Name: @Html.TextBoxFor(x => x.Year)</div>
+    <div class="col-sm-12 col-xs-12"><input type="submit" class="btn-default" value="Bereken!"/></div>
+    </div>
+
+}
 </body>
 </html>
