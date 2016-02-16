@@ -9,6 +9,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Uitkomst</title>
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css"/>
 </head>
 <body>
 <div class="uitslag col-sm-12 col-xs-12">
@@ -20,7 +21,7 @@
         }
         else
         {
-            @: Nog maar:  @ViewBag.numbDays dagen tot je verjaardag!
+            @: @Model.Name, Nog maar:  @ViewBag.numbDays dagen tot je verjaardag!
                 
         }
 

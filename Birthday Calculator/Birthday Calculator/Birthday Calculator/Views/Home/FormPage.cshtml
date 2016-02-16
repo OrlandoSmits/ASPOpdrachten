@@ -9,20 +9,25 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>FormPage</title>
+    <link rel="stylesheet" type="text/css" href="/Content/Site.css" />
     
 </head>
 <body>
 
 @using (Html.BeginForm())
 {
-    <label for="inputName">Your Name: </label>
-    <input type="text" class="form-control" id="inputName" placeholder="Voer hier uw Naam in"/> @Html.TextBoxFor(x => x.Name)
-    <div class="container-fluid">
-    <div class="col-sm-12 col-xs-12">Birthday Date:</div>
-    <div class="col-sm-12-col-xs-12">Date: @Html.TextBoxFor(x => x.Day)</div>
-    <div class="col-sm-12 col-xs-12">Month Name: @Html.TextBoxFor(x => x.Month)</div>
-    <div class="col-sm-12 col-xs-12">Year Name: @Html.TextBoxFor(x => x.Year)</div>
-    <div class="col-sm-12 col-xs-12"><input type="submit" class="btn-default" value="Bereken!"/></div>
+    <div class="bdayForm">
+        <label for="inputName">Your Name: </label>
+        <div class="col-sm-12 col-xs-12 inputName">@Html.TextBoxFor(x => x.Name)</div>
+        <div class="container-fluid">
+            <div class="col-sm-12 col-xs-12">Birthday Date:</div>
+            <div class="col-sm-12-col-xs-12 inputDate">Date: @Html.TextBoxFor(x => x.Day)</div>
+            <div class="col-sm-12 col-xs-12 inputMonth">Month Name: @Html.TextBoxFor(x => x.Month)</div>
+            <div class="col-sm-12 col-xs-12 inputYear">Year Name: @Html.TextBoxFor(x => x.Year)</div>
+            <div class="col-sm-12 col-xs-12 formSubmit">
+                <input type="submit" class="btn-default" value="Bereken!" />
+            </div>
+        </div>
     </div>
 
 }
