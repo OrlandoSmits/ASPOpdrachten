@@ -1,0 +1,32 @@
+﻿@model PartyInvite.Domain.Entities.GuestResponse
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Party Invites</h1>
+    </div>
+</div>
+<div class="text-center">
+    <h1>Bedankt, @Model.Name!</h1>
+    @if (ViewBag.Result == true)
+    {
+            <!--Gewijzigd -->
+        @: Uw wijzigingen zijn doorgevoerd (Indien u niks gewijzigd heeft kunt u dit negeren)
+        }
+    @if (ViewBag.Result == false)
+    {
+            <!-- Niet gewijzigd / al bekend -->
+        @: Deze gegevens waren al bekend, uw gegevens zijn niet gewijzigd, u kunt ze wel wijzigen.
+        @: Je overige gegevens zijn: Email: @Model.Email en Mobiel: @Model.Phone
+        }
+    <div class="lead">
+        @if (Model.WillAttend == true)
+        {
+            @: Geweldig dat je komt, bier staat al koud
+        }
+        @if (Model.WillAttend == false)
+        {
+            @: Jammer dat je niet kan komen, bedankt voor het melden
+        }
+    </div>
+</div>
+@Html.ActionLink("Home", "Index", "Home")

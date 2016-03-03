@@ -1,0 +1,42 @@
+﻿@{
+@model PartyInvite.Domain.Entities.GuestResponse
+
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-xs-4">
+                <span>
+                    @if (Model.ImageData != null)
+                    {
+                        <img class="img-thumbnail" width="75" height="75"
+                             src="@Url.Action("GetImage", "Response",
+                                  new {Model.Email})" />
+                    }
+                    else
+                    {
+                        <img class="img-thumbnail" width="75" height="75" src="~/Content/images/default_img.jpeg" />
+                    }
+                </span>
+            </div>
+            <div class="col-xs-5">
+                <p>@Html.DisplayFor(modelItem => Model.Name)</p>
+
+                <p>@Html.DisplayFor(modelItem => Model.Email)</p>
+
+                <p>@Html.DisplayFor(modelItem => Model.Phone)</p>
+
+                <p>
+                    @if (Model.WillAttend.HasValue && Model.WillAttend == true)
+            {
+                    @:Aanwezig
+            }
+            else if (Model.WillAttend.HasValue && Model.WillAttend == false)
+            {
+                    @:Afwezig
+            }
+            </p>
+        </div>
+    </div>
+    <hr />
+</div>

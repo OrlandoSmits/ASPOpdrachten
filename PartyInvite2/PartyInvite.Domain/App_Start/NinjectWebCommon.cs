@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PartyInvite.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PartyInvite.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PartyInvite.Domain.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PartyInvite.Domain.App_Start.NinjectWebCommon), "Stop")]
 
-namespace PartyInvite.App_Start
+namespace PartyInvite.Domain.App_Start
 {
     using System;
     using System.Web;

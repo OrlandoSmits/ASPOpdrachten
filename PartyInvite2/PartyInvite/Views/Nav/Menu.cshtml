@@ -1,0 +1,33 @@
+﻿<h1>Reacties</h1>
+@Html.RouteLink("Alle", new
+{
+    controller = "Response",
+    action = "List",
+    category = "null",
+    page = 1
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+})
+
+@Html.RouteLink("Aanwezigen", new
+{
+    controller = "Response",
+    action = "List",
+    category = "True",
+    page = 1
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+})
+
+@Html.RouteLink("Afwezigen", new
+{
+    controller = "Response",
+    action = "List",
+    category = "False",
+    page = 1
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+}) 

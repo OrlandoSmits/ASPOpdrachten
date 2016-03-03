@@ -1,0 +1,16 @@
+﻿@model PartyInvite.WebUI.Models.WidgetViewModel
+
+<div class="navbar-text navbar-right">
+    <span>Responses: @Model.GuestResponses (@Model.Present)</span>
+    @Html.RouteLink("Overzicht", new
+{
+    controller = "Response",
+    action = "List",
+    category = (string)null,
+    page = 1
+}, new
+{
+    @class = "btn btn-block btn-default btn-lg"
+})
+
+</div>

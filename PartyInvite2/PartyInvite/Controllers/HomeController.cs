@@ -1,53 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using PartyInvites.Models;
+using PartyInvite.Domain.Abstract;
+using PartyInvite.WebUI.Models;
 
-namespace PartyInvites.Controllers
+namespace PartyInvite.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private IRepository _repository;
+
+        public HomeController(IRepository repositoryParam)
+        {
+            _repository = repositoryParam;
+        }
+
+        public ViewResult Index()
         {
             return View();
-        }
-
-        [HttpGet]
-        public ViewResult RsvpForm()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public ViewResult RsvpForm(GuestResponse guestResponse)
-        {
-            if (ModelState.IsValid)
-            {
-                return View("Thanks", guestResponse);
-            }
-            else
-            {
-                return View();
-            }
-         
-        }
-
-        public ViewResult Attendees()
-        {
-            IEnumerable<GuestResponse> responses = repository.GetAllResponses();
-
-            ViewResult result;
-
-            if (responses.Any())
-            {
-                result = View(responses);
-            }
-            else
-            {
-                result = View("NoAttendees");
-            }
         }
     }
 }

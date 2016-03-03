@@ -1,0 +1,29 @@
+﻿@using PartyInvite.Domain.Entities
+@model PartyInvite.WebUI.Models.GuestResponseListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Party Invites</h1>
+    </div>
+</div>
+
+<div id="categories" class="col-xs-3">
+    @Html.Action("Menu", "Nav")
+</div>
+
+<div class="col-xs-9">
+    @foreach (GuestResponse response in Model.GuestResponses)
+    {
+        @Html.Partial("GuestResponseSummary", response)
+    }
+
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+        new { page = x, category = Model.CurrentCategory }))
+    </div>
+</div>

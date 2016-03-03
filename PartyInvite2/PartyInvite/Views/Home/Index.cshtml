@@ -1,20 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>PartyInvites</title>
-</head>
-<body>
-    <div class="col-sm-12 col-xs-12">
-        <div class="row">
-            <p>We're going to have an exiting party.</p>
-            <img src="/Content/forever-alone-meme-generator-1-person-attending-my-awesome-party-on-fb-you-6d7fa9.jpg" />
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+    <div class="container">
+        <h1>Party Invites</h1>
+        @Html.Action("Summary", "Response")
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Feest!</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
         </div>
     </div>
-    @Html.ActionLink("RSVP Now", "RsvpForm")
-</body>
-</html>
+    <!-- Indicates a successful or positive action -->
+    <button type="button" class="btn btn-success">@Html.ActionLink("RSVP now", "Rsvp", "Response")</button>
+</div>

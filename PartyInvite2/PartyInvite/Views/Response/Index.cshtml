@@ -1,0 +1,11 @@
+﻿@model PartyInvite.WebUI.Models.WidgetViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Party Invites</h2>
+<span>Responses: @Model.GuestResponses (@Model.Present)</span>
+@Html.ActionLink("overzicht", "List")
+
+<button>@Html.ActionLink("RSVP now", "Rsvp")</button>
