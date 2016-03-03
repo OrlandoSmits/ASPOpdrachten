@@ -33,5 +33,21 @@ namespace PartyInvites.Controllers
             }
          
         }
+
+        public ViewResult Attendees()
+        {
+            IEnumerable<GuestResponse> responses = repository.GetAllResponses();
+
+            ViewResult result;
+
+            if (responses.Any())
+            {
+                result = View(responses);
+            }
+            else
+            {
+                result = View("NoAttendees");
+            }
+        }
     }
 }

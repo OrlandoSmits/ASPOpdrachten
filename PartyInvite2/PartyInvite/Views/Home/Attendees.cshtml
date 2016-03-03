@@ -1,0 +1,38 @@
+﻿@using PartyInvites.Models 
+@model IEnumerable<GuestResponse>
+@{
+    ViewBag.Title = "Attendees";
+}
+
+<h2>Attendees</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>E-Mail</th>
+            <th>Phone</th>
+            <th>Attending?</th>
+        </tr>
+
+        @foreach (GuestResponse r in Model)
+        {
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Email</td>
+                <td>@r.Phone</td>
+
+                @if (r.WillAttend == true)
+                {
+                    @:Ja
+             }
+                else
+                {
+                    @:Nee
+             }
+            </tr>
+        }
+    </table>
+}
+
