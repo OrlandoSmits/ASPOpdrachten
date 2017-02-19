@@ -37,19 +37,24 @@ namespace BirthdayCalculator.Controllers
         [HttpPost]
         public ViewResult BirthdayForm(BirthdayResponse birthdayResponse)
         {
-            double Difference = birthdayResponse.getDaysTillBirthday();
-            
-            if (Difference > 0)
+            if (ModelState.IsValid)
             {
-                ViewBag.DaysTillBirthday = Difference;
-                return View("NotYet", birthdayResponse);
+                double Difference = birthdayResponse.getDaysTillBirthday();
+                if (Difference > 0)
+                {
+                    ViewBag.DaysTillBirthday = Difference;
+                    return View("NotYet", birthdayResponse);
+                }
+                else
+                {
+                    ViewBag.Name = birthdayResponse.Name;
+                    ViewBag.Age = birthdayResponse.getUserAge();
+                    return View("Birthday", birthdayResponse);
+                }
             } else
             {
-                ViewBag.Name = birthdayResponse.Name;
-                ViewBag.Age = birthdayResponse.getUserAge();
-                return View("Birthday", birthdayResponse);
+                return View();
             }
-
         }
     }
 }
