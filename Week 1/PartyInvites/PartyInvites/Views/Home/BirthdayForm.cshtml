@@ -1,0 +1,40 @@
+﻿@model BirthdayCalculator.Models.BirthdayResponse
+
+@{
+    ViewBag.Title = "BirthdayForm";
+}
+
+<h2>BirthdayForm</h2>
+
+<html>
+<head>
+    <title>Birthday Form!</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <h4>Vul je naam in:</h4>
+        <div class="form-group col-md-offset-2">
+            <label for="userName">Voornaam</label>
+            <div id="userName">@Html.TextBoxFor(x => x.Name, new { @class = "form-control"})</div>
+        </div>
+        <h4>Vul je geboortedatum in:</h4>
+        <div class="form-group col-md-offset-2">
+            <label for="userBirthDay">Geboorte Dag</label>
+            <div id="userBirthDay">@Html.TextBoxFor(x => x.Day, new { @type = "number", @class = "form-control", @min = "1", @max = "31" })</div>
+        </div>
+
+        <div class="form-group col-md-offset-2">
+            <label for="userBirthMonth">Geboorte Maand</label>
+            <div id="userBirthMonth">@Html.TextBoxFor(x => x.Month, new { @type = "number", @class = "form-control", @min = "1", @max = "12"  })</div>
+        </div>
+        <div class="form-group col-md-offset-2">
+            <label for="userBirthYear">Geboorte Jaar</label>
+            <div id="userBirthYear">@Html.TextBoxFor(x => x.Year, new { @type = "number", @class = "form-control", @min = "1900", @max = "2017" })</div>
+        </div>
+
+        <button type="submit" class="btn btn-success col-md-offset-2">Bereken!</button>
+     }
+</body>
+</html>
+

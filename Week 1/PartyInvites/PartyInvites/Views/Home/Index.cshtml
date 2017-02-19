@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="col-sm-12 col-md-12">
+       Vandaag is het: @ViewBag.CurrentDate 
+    </div>
+    <div class="col-sm-12 col-md-12">
+        @Html.ActionLink("Bereken het aantal dagen tot je verjaardag!", "BirthdayForm")
+    </div>
+</body>
+
+</html>
+
