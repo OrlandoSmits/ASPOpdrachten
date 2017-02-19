@@ -5,6 +5,11 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirthdayCalculator", "PartyInvites\BirthdayCalculator.csproj", "{0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{4E69AC07-4BC6-4881-AA49-33BADE6D13D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8} = {0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +20,10 @@ Global
 		{0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CC92E5F-CEB5-4B7F-BEBC-E534308DECC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E69AC07-4BC6-4881-AA49-33BADE6D13D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E69AC07-4BC6-4881-AA49-33BADE6D13D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E69AC07-4BC6-4881-AA49-33BADE6D13D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E69AC07-4BC6-4881-AA49-33BADE6D13D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

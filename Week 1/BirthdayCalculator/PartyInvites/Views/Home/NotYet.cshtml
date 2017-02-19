@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "NotYet";
+}
+
+<h2>NotYet</h2>
+
+<html>
+<head>
+    <title>Helaas!</title>
+</head>
+<body>
+    <div>
+        Helaas je bent nog niet jarig, nog maar @ViewBag.DaysTillBirthday dag(en) tot je verjaardag!
+    </div>
+    
+    <div>
+    @Html.ActionLink("Terug naar de hoofdpagina!", "Index")
+    </div>
+</body>
+</html>
