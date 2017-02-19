@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting;
 using System.Web.Mvc;
 using BirthdayCalculator.Controllers;
 using BirthdayCalculator.Models;
@@ -10,6 +11,7 @@ namespace BirthdayCalculator.Tests
     [TestClass]
     public class BirthdayCalculatorTests
     {
+        // Unit test om te kijken of het formulier gesubmitted is en er dus een View Geladen word
         [TestMethod]
         public void CanFillInForm()
         {
@@ -30,8 +32,5 @@ namespace BirthdayCalculator.Tests
             // Assert
             Assert.IsInstanceOfType(result, typeof(ViewResult));
         }
-
-
-
     }
 }
