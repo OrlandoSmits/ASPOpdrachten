@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BirthdayCalculator.Models.BirthdayResponse">
+    <Position X="9.25" Y="1.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAJAAAAAAAAAAAAAQAAAAAAAAEABAAAAAAAAA=</HashCode>
+      <FileName>Models\BirthdayResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BirthdayCalculator.Controllers.HomeController">
+    <Position X="12.75" Y="1.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAEAIAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
