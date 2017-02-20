@@ -43,6 +43,7 @@ namespace BirthdayCalculator.Controllers
                 if (Difference > 0)
                 {
                     ViewBag.DaysTillBirthday = Difference;
+                    ViewBag.Age = birthdayResponse.getUserAge() + 1;
                     return View("NotYet", birthdayResponse);
                 }
                 else
